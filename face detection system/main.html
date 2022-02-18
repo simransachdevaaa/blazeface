@@ -1,0 +1,27 @@
+<title> Blazeface implementation </title>
+
+<script src="script.js"></script>
+
+<div id='preview'></div> <br>
+
+<div id='headpos'></div>
+<p> Check console(F12) to see live logs. You can resize video canvas size from Right bottom edge.</p>
+
+<script>
+  OnResults = function (rs) {
+    console.log(rs)
+    var toAppend = '';
+    for (const [key, value] of Object.entries(rs)) {
+      toAppend += key + ' = ' + value + '<br/>';
+    }
+    document.getElementById('preview').innerHTML = toAppend;
+
+
+  }
+
+  let headpos = HeadPos.Init(
+    OnResults, 
+    HeadPosDIV = document.getElementById('headpos'), 
+    interval = 0); 
+
+</script>
